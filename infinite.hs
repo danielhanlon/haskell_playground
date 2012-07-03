@@ -28,3 +28,4 @@ gets::Int->IO String
 gets 0 = return []
 gets (n+1) = getChar >>=
             \x -> return x
+            gets n
