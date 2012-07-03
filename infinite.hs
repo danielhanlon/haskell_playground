@@ -24,7 +24,8 @@ hemming = 1:merge (map (2*) hemming) ( merge (map (3*) hemming) (map (5*) hemmin
 echo :: IO ()
 echo = getChar >>= putChar
 
-gets::Int->IO String
-gets 0 = return []
-gets (n+1) = getChar >>=
-            \x -> return x+gets n
+--gets::Int->IO String
+--gets 0 = return []
+--gets (n+1) = getChar >>=
+--            \x -> return x+gets n
+            
