@@ -23,3 +23,17 @@ instance Show Color where
   show Red = "Red"
   show Green = "Green"
   show Blue = "Blue"
+
+instance Read Color where
+  --readsPrec is the main function for parsing input
+  readsPrec _ value = 
+    --Pass tryParse a list of pairs, each a string and
+    --the desired return value.
+    tryParse [("Red",Red),("Green",Green),("Blue",Blue)]
+      where
+        tryParse [] = []
+        tryParse ((attempt,result):xs) = 
+          if (take (length attempt) value) == atempt
+            then [(result,drop (length attempt) value)]
+            else try:Parse xs
+
