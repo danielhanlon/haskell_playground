@@ -35,5 +35,5 @@ instance Read Color where
         tryParse ((attempt,result):xs) = 
           if (take (length attempt) value) == attempt
             then [(result,drop (length attempt) value)]
-            else try:Parse xs
+            else tryParse xs
 
