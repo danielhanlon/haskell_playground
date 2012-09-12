@@ -1,3 +1,4 @@
+---rectPolh.hs
 data Point2D = Cartesian2D Double Double
              | Polar2D Double Double
              deriving (Eq,show)
