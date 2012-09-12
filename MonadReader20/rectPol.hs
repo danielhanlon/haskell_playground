@@ -1,7 +1,3 @@
-cartProd (set:sets) = [x:xs | x<-set, xs<-cp]
-                      where cp=cartProd sets
-cartProd [] = [[]]
-
 data Point2D = Cartesian2D Double Double
              | Polar2D Double Double
              deriving (Eq,show)
