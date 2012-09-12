@@ -9,5 +9,5 @@ data Point2D = Cartesian2D Double Double
 instance Eq Point2D where
   Cartesian2D x y == Polar2D r theta = 
       x == rx && y == ry
-          where rx=r
-                ry=theta
+          where rx=r * cos theta
+                ry=r * sin theta
