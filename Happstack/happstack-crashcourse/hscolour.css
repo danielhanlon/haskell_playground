@@ -1,0 +1,15 @@
+.keyglyph { color: DarkGoldenrod;  }
+.layout   { color: Black;}
+.keyword  { color: PaleGreen;}
+.comment, .comment a {color: Firebrick;}
+.str      { color: RosyBrown; }
+.chr      { color: RosyBrown;}
+.keyword  { color: BlueViolet; }
+.conid    { color: ForestGreen; }
+.varid    { color: black;  } 
+.num      { color: black; }
+.varop    { color: DarkGoldenrod; }
+.conop    { color: DarkGoldenrod; }
+.sel      { color: Red; }
+.cpp      { color: Red; }
+.definition { color: Blue; }
