@@ -6,4 +6,4 @@ sierpinski n =          s
                    ( s ||| s ) # centerX
    where s = sierpinski (n-1)
 
-
+main = defaultMain $ sierpinski 7
