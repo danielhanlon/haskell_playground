@@ -14,4 +14,16 @@ circle1 = circle 1 # fc red # lw 0 ||| circle 1 # fc green # lw 0 # showOrigin
 e2 = el1 ||| el1 
   where el1 = circle 1 # scaleX 0.5 # rotateBy (1/6) # pad 1.1
 
-main = defaultMain e2
+c = circle 1 # lw 0.1
+
+circles = hcat' with {sep = 0.5}
+          [ c
+          , c # scale 2
+          , c # freeze # scale 2
+          , c # scaleX 0.2
+          , c # freeze # scaleX 0.2
+          ]
+          # centerXY
+          # pad 1.1
+
+main = defaultMain circles
