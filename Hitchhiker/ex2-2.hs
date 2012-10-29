@@ -4,4 +4,4 @@ main = do
   putStrLn $ "Welcome to Haskell, "++inpStr++"!"
   putStrLn "What is your favourite colour?"
   inputStr2 <- getLine
-  putStrLn "Your favourite colour is "++inputStr2
+  putStrLn $ "Your favourite colour is "++inputStr2
