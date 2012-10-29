@@ -26,4 +26,4 @@ circles = hcat' with {sep = 0.5}
           # centerXY
           # pad 1.1
 
-main = defaultMain circles
+main = defaultMain e2
