@@ -1,16 +1,6 @@
 comb = do
-  height <- [1..]
-  a <- [1..height-1]
-  let b = height-a
-  return (a,b)
-
-height h = do
-  total <- [1..h]
-  a <- [1..total-1]
-  let b = total-a
-  return (a,b)
-
-triple = do
-  :q
-
---  let (a,b) = take 
+  height <- [0..]
+  a <- [0..height-2]
+  b <- [0..height-2]
+  let c = height-(a+b)
+  return (a,b,c)
