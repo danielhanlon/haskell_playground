@@ -10,5 +10,7 @@ height h = do
   let b = total-a
   return (a,b)
 
-triple h = ()
+triple = do
+  :q
+
 --  let (a,b) = take 
