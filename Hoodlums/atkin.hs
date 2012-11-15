@@ -6,3 +6,4 @@ mylist = do
         let bb=b*b
         let cc=c*c
           | aa+bb==cc
+        return (a,b,c)
