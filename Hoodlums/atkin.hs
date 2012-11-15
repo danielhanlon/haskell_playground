@@ -1,9 +1,11 @@
-mylist = do
-        a <- [1..]
-        b <- [1..]
-        c <- [1..]
-        let aa=a*a
-        let bb=b*b
-        let cc=c*c
-          | aa+bb==cc
-        return (a,b,c)
+atkin = do m <- [1..60]
+   n <- [1..60]
+   guard (mod (poly m n) 60 == k)
+   return $
+      do j <- [0..]
+         let y = n + 60*j
+         return $
+            do i <- [0..]
+               let x = m + 60*i
+               guard (test x y)
+               return (poly x y)
