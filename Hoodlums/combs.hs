@@ -1,4 +1,3 @@
-getCombinations :: [a] -> [[a]]
 getCombinations = do
     a <- [1..]
     b <- [1..] 
