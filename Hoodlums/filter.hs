@@ -1,3 +1,3 @@
 import Data.Char(toUpper)
 
-main = interact ( toUpper )
+main = interact ( map toUpper )
