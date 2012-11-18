@@ -4,5 +4,4 @@ upperFile :: String -> IO ()
 upperFile s = do
                   file <- readFile s
                   let ls = lines file
-                  do 
-                    mapM putStrLn ( map  (\l -> map toUpper l) ls)
+                  map  (\l -> map toUpper l) ls
