@@ -9,4 +9,5 @@ upperFile :: String -> IO ()
 upperFile s = do
                   file <- readFile s
                   let ls = lines file
-                  my_sequence $ map  (\l -> map toUpper l) ls
+                  let actions = map  (\l -> map toUpper l) ls
+                  my_sequence actions
