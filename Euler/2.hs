@@ -11,7 +11,7 @@ even_fib = [x | x<-fibonacci, x `mod`2 ==0]
 sumFibUpTo total = sumFib 1
   where
     sumFib 1 = 1 + sumFib 2
-    sumFib n = 
+    sumFib n  
       | fib n  < total, fib n + sumFib (n+1)
       | otherwise, 0
     fib 1 = 1
