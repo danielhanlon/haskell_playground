@@ -9,9 +9,9 @@ even_fib :: [Integer]
 even_fib = [x | x<-fibonacci, x `mod`2 ==0]
 
 fibUpTo :: Integer -> [Integer]
-fibUpTo total = [] ++ sumFib 1
+fibUpTo total = sumFib 1
   where
-    sumFib 1 = 1 ++ sumFib 2
+    sumFib 1 = [1] ++ sumFib 2
     sumFib n  
       | fib n <= total = fib n ++ sumFib (n+1)
       | otherwise = 0
