@@ -8,6 +8,7 @@ fibonacci = [fib n | n<-[1..]]
 even_fib :: [Integer]
 even_fib = [x | x<-fibonacci, x `mod`2 ==0]
 
+fibUpTo :: Integer -> [Integer]
 fibUpTo total = []:sumFib 1
   where
     sumFib 1 = 1 : sumFib 2
