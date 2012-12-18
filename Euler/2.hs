@@ -1,3 +1,4 @@
+fibonacci :: (Ord a, Num a) a -> a§
 fibonacci = [fib n | n<-[1..]]
   where
     fib 1 = 1
