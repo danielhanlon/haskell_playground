@@ -12,7 +12,7 @@ sumFibUpTo total = sumFib 1
   where
     sumFib 1 = 1 + sumFib 2
     sumFib n  
-      | fib n < total = fib n + sumFib (n+1)
+      | fib n <= total = fib n + sumFib (n+1)
       | otherwise = 0
     fib 1 = 1
     fib 2 = 2
