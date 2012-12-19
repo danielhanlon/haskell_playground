@@ -14,5 +14,5 @@ even_fib :: [Integer]
 even_fib = filter even fibonacci
 
 upTo n (x:xs)
-  | x > n = xs
+  | x > n = []
   | otherwise = x:(upTo n xs)
