@@ -18,5 +18,5 @@ upTo n (x:xs)
 
 data FibFrame = FibFrame Int Int 
 nextFibFrame :: FibFrame -> FibFrame
-nextFibFrame $ FibFrame a b = FibFrame b a+b
+nextFibFrame ( FibFrame a b ) = FibFrame b a+b
 
