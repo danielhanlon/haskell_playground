@@ -12,7 +12,7 @@ upTo n (x:xs)
   | x > n = []
   | otherwise= x:(upTo n xs)
 
-data FibFrame = FibFrame Int Int 
+data FibFrame = FibFrame Ord Ord 
 instance Show FibFrame where
   show (FibFrame a b) = show b
 instance Ord FibFrame where
