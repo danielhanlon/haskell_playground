@@ -1,4 +1,4 @@
-data FibFrame = FibFrame Ord Ord 
+data FibFrame = FibFrame Int Int
         deriving Eq
 instance Show FibFrame where
   show (FibFrame a b) = show b
