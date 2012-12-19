@@ -17,5 +17,5 @@ upTo n (x:xs)
   | otherwise= x:(upTo n xs)
 
 data FibFrame = FibFrame Int Int 
-nextFibFrame (FibFrame a b) = FibFrame b a+b
+nextFibFrame (FibFrame a b) = (FibFrame b a+b)
 
