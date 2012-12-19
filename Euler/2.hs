@@ -17,7 +17,7 @@ upTo n (x:xs)
   | otherwise= x:(upTo n xs)
 
 data FibFrame = FibFrame Int Int 
-                deriving show
+                deriving Show
 nextFibFrame :: FibFrame -> FibFrame
 nextFibFrame ( FibFrame a b ) = FibFrame b (a+b)
 
