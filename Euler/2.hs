@@ -12,3 +12,7 @@ fibonacci = [fib n | n<-[1..]]
 
 even_fib :: [Integer]
 even_fib = filter even fibonacci
+
+upTo n x:xs 
+  | x <=n = x:(upTo n xs)
+  | otherwise = x:xs
