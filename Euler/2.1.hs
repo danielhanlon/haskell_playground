@@ -7,3 +7,7 @@ instance Ord FibFrame where
 nextFibFrame :: FibFrame -> FibFrame
 nextFibFrame ( FibFrame a b ) = FibFrame b (a+b)
 fib = iterate nextFibFrame (FibFrame 1 1)
+
+upTo n (x:xs)
+  | x > n = []
+  | otherwise = x:(upTo n xs)
