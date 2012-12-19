@@ -15,4 +15,4 @@ even_fib = filter even fibonacci
 
 upTo n (x:xs)
   | x > n = []
-  | otherwise = x:(upTo n xs)
+  | otherwise= x:(upTo n xs)
