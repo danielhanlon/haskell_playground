@@ -2,7 +2,7 @@ data FibFrame = FibFrame Ord Ord
         deriving Eq
 instance Show FibFrame where
   show (FibFrame a b) = show b
-instance Ord FibFrame where
+instance (Ord a) => Ord (FibFrame) where
   (FibFrame a1 b1) <= (FibFrame a2 b2) = b1<=b2
 nextFibFrame :: FibFrame -> FibFrame
 nextFibFrame ( FibFrame a b ) = FibFrame b (a+b)
