@@ -14,6 +14,8 @@ upTo n (x:xs)
 
 data FibFrame = FibFrame Int Int 
                 deriving Show
+instance Show FibFrame where
+  show (FibFrame a b) = b
 nextFibFrame :: FibFrame -> FibFrame
 nextFibFrame ( FibFrame a b ) = FibFrame b (a+b)
 fib = iterate nextFibFrame (FibFrame 1 2)
