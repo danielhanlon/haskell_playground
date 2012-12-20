@@ -29,4 +29,5 @@ isPrime n = isNotDivisibleBy 2
     root_n = floor $ sqrt $ fromIntegral n
     isNotDivisibleBy f 
       | f > root_n = True
-      | n `mod` f == 0 = isNotDivisibleBy (f+1)
+      | n `mod` f == 0 = False
+      | otherwise = isNotDivisibleBy (f+1)
