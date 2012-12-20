@@ -23,7 +23,6 @@ mem_fibonnaci = [memoized_fib n | n<-[1..]]
 --Euler 1
 --sum $ upTo 999 [ x | x<-[1..], (x`mod`3==0 || x`mod`5==0) ]
 
-
 memoizedIsPrime :: Int -> Bool
 memoizedIsPrime = (map isPrime [0..] !!)
   where
@@ -39,11 +38,11 @@ memoizedIsPrime = (map isPrime [0..] !!)
 primes = [n | n<-[1..], memoizedIsPrime n]
 
 primeFactors :: Int -> [Int]
-primeFactors n = addPrimeFactor candidates []::[Int]
+primeFactors n = addPrimeFactor candidates []
   where
     candidates = upTo (floor $ sqrt $ fromIntegral n) primes
     addPrimeFactor (c:cs) fs
-      | (n `mod` c == 0) = addPrimeFactor cs fs:c
+      | (n `mod` c == 0) = addPrimeFactor cs fs++c
       | otherwise = addPrimeFactor cs fs
 --    addPrimeFactor c fs
 --      | c > quot n 2 = fs
