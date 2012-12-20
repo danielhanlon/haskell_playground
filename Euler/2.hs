@@ -26,7 +26,7 @@ mem_fibonnaci = [memoized_fib n | n<-[1..]]
 isPrime :: Int -> Bool
 isPrime n = isNotDivisibleBy 2
   where
-    root_n = floor $ sqrt $ fromIntegral f
+    root_n = floor $ sqrt $ fromIntegral n
     isNotDivisibleBy f 
       | f > root_n = True
       | n `mod` f == 0 = isNotDivisibleBy (f+1)
