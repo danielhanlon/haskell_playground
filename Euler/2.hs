@@ -51,3 +51,10 @@ primeFactors n = addPrimeFactor candidates []
 --      | c > quot n 2 = fs
 --      | (n `mod` c == 0) && memoizedIsPrime c = addPrimeFactor (c+1) (c:fs)
 --      | otherwise = addPrimeFactor (c+1) fs
+
+readAnInt :: IO Int
+readAnInt = readLn
+
+main = do
+  number = readAnInt
+  putStrLn maximum $ primeFactors number
