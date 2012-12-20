@@ -42,7 +42,7 @@ primeFactors n = addPrimeFactor candidates []
   where
     candidates = upTo (floor $ sqrt $ fromIntegral n) primes
     addPrimeFactor (c:cs) fs
-      | (n `mod` c == 0) = addPrimeFactor cs c:fs
+      | (n `mod` c == 0) = addPrimeFactor cs (c:fs)
       | otherwise = addPrimeFactor cs fs
 --    addPrimeFactor c fs
 --      | c > quot n 2 = fs
