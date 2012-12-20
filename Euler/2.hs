@@ -39,7 +39,7 @@ memoizedIsPrime = (map isPrime [0..] !!)
 primes = [n | n<-[1..], memoizedIsPrime n]
 
 primeFactors :: Int -> [Int]
-primeFactors n = addPrimeFactor candidates []
+primeFactors n = addPrimeFactor candidates []::[Int]
   where
     candidates = upTo (floor $ sqrt $ fromIntegral n) primes
     addPrimeFactor (c:cs) fs
