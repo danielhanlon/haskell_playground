@@ -42,7 +42,7 @@ primes = [n | n<-[1..], memoizedIsPrime n]
 primeFactors :: Int -> [Int]
 primeFactors n = addPrimeFactor candidates []
   where
-    candidates = upTo (floor $ sqrt $ fromIntegral n) primes
+    candidates = upToIncluding (floor $ sqrt $ fromIntegral n) primes
     addPrimeFactor (c:cs) fs
       | cs == [] = fs
       | (n `mod` c == 0) = addPrimeFactor cs (c:fs)
