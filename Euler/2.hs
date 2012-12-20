@@ -39,9 +39,13 @@ memoizedIsPrime = (map isPrime [0..] !!)
 primes = [n | n<-[1..], memoizedIsPrime n]
 
 primeFactors :: Int -> [Int]
-primeFactors n = addPrimeFactor 1 []
+primeFactors n = addPrimeFactor candidates []
   where
-    addPrimeFactor c fs
-      | c > quot n 2 = fs
-      | (n `mod` c == 0) && memoizedIsPrime c = addPrimeFactor (c+1) (c:fs)
-      | otherwise = addPrimeFactor (c+1) fs
+    candidates = upTo (floor $ sqrt $ fromIntegral n) primes
+    addPrimeFactor c:cs fs
+      | (n `mod` c == 0) = addPrimeFactor cs fs:c
+      | otherwise = addPrimeFactors cs fs
+--    addPrimeFactor c fs
+--      | c > quot n 2 = fs
+--      | (n `mod` c == 0) && memoizedIsPrime c = addPrimeFactor (c+1) (c:fs)
+--      | otherwise = addPrimeFactor (c+1) fs
