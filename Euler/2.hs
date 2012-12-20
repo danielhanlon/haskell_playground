@@ -23,3 +23,10 @@ mem_fibonnaci = [memoized_fib n | n<-[1..]]
 --Euler 1
 --sum $ upTo 999 [ x | x<-[1..], (x`mod`3==0 || x`mod`5==0) ]
 
+isPrime :: Int -> Bool
+isPrime n = isNotDivisibleBy 2
+  where
+    root_n = round $ sqrt n
+    isNotDivisibleBy f 
+      | f >= root_n = True
+      | n `mod` f == 0 = isNotDivisibleBy (f+1)
