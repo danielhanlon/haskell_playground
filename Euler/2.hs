@@ -56,5 +56,5 @@ readAnInt :: IO Int
 readAnInt = readLn
 
 main = do
-  number = readAnInt
+  number <- readAnInt
   putStrLn maximum $ primeFactors number
