@@ -35,3 +35,11 @@ memoizedIsPrime = (map isPrime [0..] !!)
             | f > root_n = True
             | n `mod` f == 0 = False
             | otherwise = isNotDivisibleBy (f+1)
+
+primeFactors :: Int -> [Int]
+primeFactors n = addPrimeFactor 2 []
+  where
+    addPrimeFactor c fs
+      | c > (n/2) = fs
+      | (n `mod` c == 0) && memoizedIsPrime c = addPrimeFactor (c+1) (fs++c)
+      | otherwise = addPrimeFactor (c+1) fs
