@@ -40,6 +40,6 @@ primeFactors :: Int -> [Int]
 primeFactors n = addPrimeFactor 2 []
   where
     addPrimeFactor c fs
-      | c > (n/2) = fs
+      | c > floor (n/2) = fs
       | (n `mod` c == 0) && memoizedIsPrime c = addPrimeFactor (c+1) (c:fs)
       | otherwise = addPrimeFactor (c+1) fs
