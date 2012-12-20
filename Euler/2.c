@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
-#define N 317584931803
+//#define N 317584931803
+#define N 600851475143
 
 #define divisible(x, y)   !(remainder((x),(y)))
 
