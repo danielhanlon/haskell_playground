@@ -57,4 +57,4 @@ readAnInt = readLn
 
 main = do
   number <- readAnInt
-  putStrLn $ maximum $ primeFactors number
+  putStrLn $ show $ maximum $ primeFactors number
