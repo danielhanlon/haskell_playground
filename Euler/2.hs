@@ -9,8 +9,10 @@ even_fib :: [Integer]
 even_fib = filter even fibonacci
 
 upTo n (x:xs)
-  | x > n = []
+  | x >= n = []
   | otherwise= x:(upTo n xs)
+
+upToIncluding n xs = upTo (n+1) xs
 
 memoized_fib :: Int -> Integer
 memoized_fib = (map fib [0 ..] !!)
