@@ -44,7 +44,7 @@ primeFactors n = addPrimeFactor candidates []
     candidates = upTo (floor $ sqrt $ fromIntegral n) primes
     addPrimeFactor (c:cs) fs
       | (n `mod` c == 0) = addPrimeFactor cs fs:c
-      | otherwise = addPrimeFactors cs fs
+      | otherwise = addPrimeFactor cs fs
 --    addPrimeFactor c fs
 --      | c > quot n 2 = fs
 --      | (n `mod` c == 0) && memoizedIsPrime c = addPrimeFactor (c+1) (c:fs)
