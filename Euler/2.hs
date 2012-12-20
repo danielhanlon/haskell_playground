@@ -17,3 +17,5 @@ memoized_fib = (map fib [0 ..] !!)
   where fib 0 = 0
         fib 1 = 1
         fib n = memoized_fib (n-2) + memoized_fib (n-1)
+
+mem_fibonnaci = [memoized_fib n | n<-[1..]]
