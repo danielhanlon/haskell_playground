@@ -37,7 +37,7 @@ memoizedIsPrime = (map isPrime [0..] !!)
             | otherwise = isNotDivisibleBy (f+1)
 
 primeFactors :: Int -> [Int]
-primeFactors n = addPrimeFactor 2 []
+primeFactors n = addPrimeFactor 1 []
   where
     addPrimeFactor c fs
       | c > quot n 2 = fs
