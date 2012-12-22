@@ -70,7 +70,7 @@ primeFactors x = primeFactors' x 0
           current = Data.Numbers.primes!!i
 
 isPalindrome :: Int -> Bool
-isPalindrom n = isPalindrome' $ show n
+isPalindrome n = isPalindrome' $ show n
   where
     isPalindrome' [] = True
     isPalindrome' (x:[]) = True
