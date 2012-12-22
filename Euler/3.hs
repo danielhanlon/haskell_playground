@@ -69,3 +69,4 @@ isPalindrome n = isPalindrome' $ show n
       | otherwise = False
         where sx = reverse xs
     
+--maximum $ filter isPalindrome [ x*y | x<-[100..999], y<-[100.999] ]
