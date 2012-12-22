@@ -37,7 +37,7 @@ memoizedIsPrime = (map isPrime [0..] !!)
             | n `mod` f == 0 = False
             | otherwise = isNotDivisibleBy (f+1)
 
-primes = [n | n<-[1..], memoizedIsPrime n]
+primes = [n | n<-[2..], memoizedIsPrime n]
 
 primeFactors :: Int -> [Int]
 primeFactors n = addPrimeFactor candidates []
