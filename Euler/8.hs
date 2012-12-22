@@ -82,7 +82,7 @@ prodFiveConsec :: String -> [Int]
 prodFiveConsec s = pfc' s []
   where
     prod :: Char -> Char -> Char -> Char -> Char -> Int
-    prod a b c d e = (read a)*(read b)*(read c)*(read d)*(read e)
+    prod a b c d e = (read [a])*(read [b])*(read [c])*(read [d])*(read [e])
     pfc' :: String -> [Int] -> [Int]
     pfc' (a:b:c:d:e:[]) res = (prod a b c d e):res
     pfc' (a:b:c:d:e:f) res = pfc' f ((prod a b c d e):res)
