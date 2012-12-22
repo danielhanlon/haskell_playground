@@ -76,5 +76,5 @@ isDivisibleBy n (f:fs) = ( n `mod` f == 0 )  && isDivisibleBy n fs
 
 main = do
   number_string <- getContents
-  let n::Int = read number_string
+  let n = (read number_string)::Int
   putStrLn $ show n
