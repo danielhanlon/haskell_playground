@@ -70,3 +70,7 @@ isPalindrome n = isPalindrome' $ show n
         where sx = reverse xs
     
 --maximum $ filter isPalindrome [ x*y | x<-[100..999], y<-[100.999] ]
+
+isDivisibleBy :: Int -> [Int] -> Bool
+isDivisibleBy n (f:fs) = ( n `mod` f == 0 )  && isDivisibleBy n fs
+isDivisibleBy n (f:[]) = ( n `mod` f == 0 )
