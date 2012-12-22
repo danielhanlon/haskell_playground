@@ -75,6 +75,13 @@ isDivisibleBy n (f:fs) = ( n `mod` f == 0 )  && isDivisibleBy n fs
 --(10 mins....)
 
 main = do
-  number_string <- getContents
-  let n = (read number_string)::Int
-  putStrLn $ show number_string
+  n <- getContents
+  putStrLn $ show $ maximum $ prodFiveConsec n
+
+prodFiveConsec :: String -> [Int]
+prodFiveConsec s = pfc' s []
+  where
+    pfc' a:b:c:d:e:[] res = (prod a b c d e):res
+    pfc' a:b:c:d:e:f res = pfc' f (prod a b c d e):res
+      where
+        prod a b c d e = (read a)::Int * (read b)::Int * (read c)::Int * (read d)::Int * (read e)::Int
