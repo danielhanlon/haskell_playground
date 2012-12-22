@@ -67,4 +67,4 @@ primeFactors x = primeFactors' x 0
       | x `divBy` current = current:primeFactors' (x `div` current) 0
       | otherwise = primeFactors' x (i+1)
         where
-          current = primes!!i
+          current = Data.Numbers.primes!!i
