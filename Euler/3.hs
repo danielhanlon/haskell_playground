@@ -59,16 +59,6 @@ main = do
   number <- readAnInt
   putStrLn $ show $ maximum $ primeFactors number
 
-primeFactors x = primeFactors' x 0
-  where
-    primeFactors' 0 _ = []
-    primeFactors' x i
-      | (current*current > x) = [x]
-      | x `divBy` current = current:primeFactors' (x `div` current) 0
-      | otherwise = primeFactors' x (i+1)
-        where
-          current = Data.Numbers.primes!!i
-
 isPalindrome :: Int -> Bool
 isPalindrome n = isPalindrome' $ show n
   where
