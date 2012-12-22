@@ -55,10 +55,6 @@ primeFactors n = addPrimeFactor candidates []
 readAnInt :: IO Int
 readAnInt = readLn
 
-main = do
-  number <- readAnInt
-  putStrLn $ show $ maximum $ primeFactors number
-
 isPalindrome :: Int -> Bool
 isPalindrome n = isPalindrome' $ show n
   where
@@ -77,3 +73,8 @@ isDivisibleBy n (f:fs) = ( n `mod` f == 0 )  && isDivisibleBy n fs
 
 --head [n | n<-[1..], isDivisibleBy n [2..20]]
 --(10 mins....)
+
+main = do
+  number_string <- getContents
+  let n = read number_string
+  putStrLn $ write n
