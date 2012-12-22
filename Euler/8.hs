@@ -85,4 +85,4 @@ prodFiveConsec s = pfc' s []
     prod a b c d e = (read [a])*(read [b])*(read [c])*(read [d])*(read [e])
     pfc' :: String -> [Int] -> [Int]
     pfc' (a:b:c:d:e:[]) res = (prod a b c d e):res
-    pfc' (a:b:c:d:e:f) res = pfc' f ((prod a b c d e):res)
+    pfc' (a:b:c:d:e:f) res = pfc' (b:c:d:e:f) ((prod a b c d e):res)
