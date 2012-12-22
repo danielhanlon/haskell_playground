@@ -84,4 +84,5 @@ prodFiveConsec s = pfc' s []
     pfc' (a:b:c:d:e:[]) res = (prod a b c d e):res
     pfc' (a:b:c:d:e:f) res = pfc' f (prod a b c d e):res
       where
-        prod a b c d e = (read a)::Int * (read b)::Int * (read c)::Int * (read d)::Int * (read e)::Int
+        prod :: String -> String -> String -> String -> String -> Int
+        prod a b c d e = a*b*c*d*e
