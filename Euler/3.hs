@@ -74,3 +74,5 @@ isPalindrome n = isPalindrome' $ show n
 isDivisibleBy :: Int -> [Int] -> Bool
 isDivisibleBy n (f:[]) = ( n `mod` f == 0 )
 isDivisibleBy n (f:fs) = ( n `mod` f == 0 )  && isDivisibleBy n fs
+
+--head [n | n<-[1..], isDivisibleBy n [2..20]]
