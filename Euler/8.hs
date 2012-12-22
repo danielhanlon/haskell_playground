@@ -81,7 +81,7 @@ main = do
 prodFiveConsec :: String -> [Int]
 prodFiveConsec s = pfc' s []
   where
-    pfc' a:b:c:d:e:[] res = (prod a b c d e):res
-    pfc' a:b:c:d:e:f res = pfc' f (prod a b c d e):res
+    pfc' (a:b:c:d:e:[]) res = (prod a b c d e):res
+    pfc' (a:b:c:d:e:f) res = pfc' f (prod a b c d e):res
       where
         prod a b c d e = (read a)::Int * (read b)::Int * (read c)::Int * (read d)::Int * (read e)::Int
