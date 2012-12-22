@@ -71,8 +71,9 @@ primeFactors x = primeFactors' x 0
 
 isPalindrome :: Int -> Bool
 isPalindrom n = isPalindrome' $ show n
-  isPalindrome' [] = True
-  isPalindrome' (x:[]) = True
-  isPalindrome' (x:xs)
-    | x == head sx = isPalindrome $ tail sx
-      where sx = reverse xs
+  where
+    isPalindrome' [] = True
+    isPalindrome' (x:[]) = True
+    isPalindrome' (x:xs)
+      | x == head sx = isPalindrome $ tail sx
+        where sx = reverse xs
