@@ -81,7 +81,7 @@ main = do
 prodFiveConsec :: String -> [Int]
 prodFiveConsec s = pfc' s []
   where
-    prod :: String -> String -> String -> String -> String -> Int
+    prod :: Char -> Char -> Char -> Char -> Char -> Int
     prod a b c d e = (read a)*(read b)*(read c)*(read d)*(read e)
     pfc' :: String -> [Int] -> [Int]
     pfc' (a:b:c:d:e:[]) res = (prod a b c d e):res
