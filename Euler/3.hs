@@ -65,5 +65,5 @@ isPalindrome n = isPalindrome' $ show n
     isPalindrome' [] = True
     isPalindrome' (x:[]) = True
     isPalindrome' (x:xs)
-      | x == (head sx) = isPalindrome $ tail sx
+      | x == (head sx) = isPalindrome' $ tail sx
         where sx = reverse xs
