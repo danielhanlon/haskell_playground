@@ -86,3 +86,7 @@ prodFiveConsec s = pfc' s []
     pfc' :: String -> [Int] -> [Int]
     pfc' (a:b:c:d:e:[]) res = (prod a b c d e):res
     pfc' (a:b:c:d:e:f) res = pfc' (b:c:d:e:f) ((prod a b c d e):res)
+
+--problem 9
+--
+--[a*b*c|a<-[1..1000],b<-[1..1000],c<-[1..1000],(a*a+b*b==c*c),a+b+c==1000]
