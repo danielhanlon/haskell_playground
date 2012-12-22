@@ -68,3 +68,11 @@ primeFactors x = primeFactors' x 0
       | otherwise = primeFactors' x (i+1)
         where
           current = Data.Numbers.primes!!i
+
+isPalindrome :: Int -> Bool
+isPalindrom n = isPalindrome' $ show n
+  isPalindrome' [] = True
+  isPalindrome' (x:[]) = True
+  isPalindrome' (x:xs)
+    | x == head sx = isPalindrome $ tail sx
+      where sx = reverse xs
