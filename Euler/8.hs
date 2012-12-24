@@ -90,3 +90,9 @@ prodFiveConsec s = pfc' s []
 --problem 9
 --
 --[a*b*c|a<-[1..1000],b<-[1..1000],c<-[1..1000],(a*a+b*b==c*c),a+b+c==1000]
+
+
+erastothenesUpTo :: Int -> [Int]
+erastothenesUpTo n = foldl remove [] [2..n]
+  where
+      remove remaining toFactor
