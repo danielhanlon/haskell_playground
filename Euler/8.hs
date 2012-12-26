@@ -91,8 +91,11 @@ prodFiveConsec s = pfc' s []
 --
 --[a*b*c|a<-[1..1000],b<-[1..1000],c<-[1..1000],(a*a+b*b==c*c),a+b+c==1000]
 
+f x = case x of
+  0 -> 18
+  1 -> 17
+  2 -> 16
 
-erastothenesUpTo :: Int -> [Int]
-erastothenesUpTo n = foldl remove [] [2..n]
-  where
-      remove remaining toFactor
+--erastothenesUpTo :: Int -> [Int]
+--erastothenesUpTo n = 
+--  possibles = [2..n]
