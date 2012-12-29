@@ -98,4 +98,4 @@ f x = case x of
   1 -> 17
   2 -> 16
 
-squares = array (1,100) [(i,i*i)|i<-[1..100]]
+squares = array (1,100) [(i,i*i)|i<-[1..100]]::[(Int,Int)]
