@@ -96,6 +96,4 @@ f x = case x of
   1 -> 17
   2 -> 16
 
---erastothenesUpTo :: Int -> [Int]
---erastothenesUpTo n = 
---  possibles = [2..n]
+
