@@ -1,3 +1,5 @@
+import Data.Array.Base
+
 fibonacci :: (Enum a, Num a) => [a] 
 fibonacci = [fib n | n<-[1..]]
   where
@@ -96,4 +98,4 @@ f x = case x of
   1 -> 17
   2 -> 16
 
-
+squares = array (1,100) [(i,i*i)|i<-[1..100]]
