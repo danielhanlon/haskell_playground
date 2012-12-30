@@ -98,6 +98,4 @@ f x = case x of
   1 -> 17
   2 -> 16
 
-squares_list = [(i,i*i)|i<-[1..100]]::[(Int,Int)]
-squares_range = (1,100)::(Int,Int)
-squares = array squares_range squares_list
+squares = array (1,100) [(i,i*i)|<-[1..100]]
