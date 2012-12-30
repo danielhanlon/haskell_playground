@@ -1,4 +1,4 @@
-import Data.Array.Base
+import Data.Array
 
 fibonacci :: (Enum a, Num a) => [a] 
 fibonacci = [fib n | n<-[1..]]
