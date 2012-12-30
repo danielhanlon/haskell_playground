@@ -98,5 +98,5 @@ f x = case x of
   1 -> 17
   2 -> 16
 
-squares :: [(Int,Int)]
-squares = array (1,100) $ ([(i,i*i)|i<-[1..100]]::[(Int,Int)])
+squares_list = [(i,i*i)|i<-[1..100]]::(Int,Int)
+squares = array (1,100) squares_list
