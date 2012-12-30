@@ -11,6 +11,6 @@ data GenCard = GenCard Rank Suit
                deriving (Eq, Ord, Show, Read)
  
 genCardToInt :: GenCard -> Int
-genCardToInt (GenCard r s) = lookup | (r,s)
+genCardToInt (GenCard r s) = lookup (r,s)
   where
     lookup = listArray ((Two,Clubs),(Ace,Spades)) [x|x<-[0..51]]
