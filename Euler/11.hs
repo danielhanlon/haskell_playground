@@ -31,8 +31,8 @@ wavefront n = a where
 printLines :: [[String]] -> IO()
 printLines ss = (mapM_ . mapM_) putStrLn ss
   
-myReadInt :: String -> Int
-myReadInt = read 
+readInt :: String -> Int
+readInt = read 
 
 main = do
   input <- getContents
