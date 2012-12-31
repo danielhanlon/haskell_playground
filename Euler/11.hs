@@ -31,4 +31,5 @@ wavefront n = a where
 main = do
   input <- getContents
   let l = lines input
-  return $ map putStr l
+  do
+    map putStr l
