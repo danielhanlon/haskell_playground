@@ -28,7 +28,11 @@ wavefront n = a where
                      [((i,j), a!(i,j-1) + a!(i-1,j-1) + a!(i-1,j))
                                 | i <- [2..n], j <- [2..n]])
 
+printLines :: [String] -> IO()
+printLines ss = mapM putStrLn ss
+  
+
 main = do
   input <- getContents
   let l = lines input
-  map (\i -> do return $ putStr i) l
+  printLines l
