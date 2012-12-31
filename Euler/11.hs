@@ -28,8 +28,8 @@ wavefront n = a where
                      [((i,j), a!(i,j-1) + a!(i-1,j-1) + a!(i-1,j))
                                 | i <- [2..n], j <- [2..n]])
 
-printLines :: [[a]] -> IO()
-printLines ss = (mapM_ . mapM_) putStrLn . show ss
+printLines :: Show a => [[a]] -> IO()
+printLines ss = (mapM_ . mapM_) (putStrLn . show) ss
   
 readInt :: String -> Int
 readInt = read 
