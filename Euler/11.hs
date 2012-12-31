@@ -27,3 +27,8 @@ wavefront n = a where
                      [((i,1),1) | i <- [2..n]] ++
                      [((i,j), a!(i,j-1) + a!(i-1,j-1) + a!(i-1,j))
                                 | i <- [2..n], j <- [2..n]])
+
+main = do
+  input <- getContents
+  let l = lines input
+  map putStr l
