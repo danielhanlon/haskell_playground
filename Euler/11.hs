@@ -36,5 +36,5 @@ readInt = read
 
 main = do
   input <- getContents
-  --let list = map (map read words) $ lines input
-  --printLines list
+  let list = map words $ lines input
+  printLines list
