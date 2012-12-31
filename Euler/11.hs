@@ -28,7 +28,7 @@ wavefront n = a where
                      [((i,j), a!(i,j-1) + a!(i-1,j-1) + a!(i-1,j))
                                 | i <- [2..n], j <- [2..n]])
 
-printLines :: [[String]] -> IO()
+printLines :: [[a]] -> IO()
 printLines ss = (mapM_ . mapM_) putStrLn ss
   
 readInt :: String -> Int
@@ -36,5 +36,5 @@ readInt = read
 
 main = do
   input <- getContents
-  let list = map words $ lines input
+  let list = map (map readInt . words) $ lines input
   printLines list
