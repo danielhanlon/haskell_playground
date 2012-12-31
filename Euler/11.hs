@@ -36,8 +36,8 @@ readInt = read
 
 main = do
   input <- getContents
-  let list2D = map (map readInt . words) $ lines input
-  let list = map readInt $ words input
+  --let list2D = map (map readInt . words) $ lines input
+  --let list = map readInt $ words input
   --printLines list2D
-  let la = listArray ((0,0),(19,19)) list
+  let la = listArray ((0,0),(19,19)) $ map readInt $ words input
   putStrLn (show la)
