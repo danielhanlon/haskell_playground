@@ -38,5 +38,5 @@ main = do
   input <- getContents
   let list = map (map readInt . words) $ lines input
   printLines list
-  let la = listArray ((1,1),(20,20)) list
+  let la = listArray ((0,0),(19,19)) list
   putStrLn (show la)
