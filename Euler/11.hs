@@ -29,7 +29,7 @@ wavefront n = a where
                                 | i <- [2..n], j <- [2..n]])
 
 printLines :: [[a]] -> IO()
-printLines ss = (mapM_ . mapM_) show ss
+printLines ss = (mapM_ . mapM_) putStrLn . show ss
   
 readInt :: String -> Int
 readInt = read 
