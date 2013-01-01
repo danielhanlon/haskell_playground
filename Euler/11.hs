@@ -44,7 +44,7 @@ main = do
   --printLines list2D
   let la = listArray ((0,0),(19,19)) $ map readInt $ words input
   let rp = rightProducts la
-  putStrLn $ length rp
+  putStrLn (show $ length rp)
   putStrLn
   putStrLn (show rp)
 
