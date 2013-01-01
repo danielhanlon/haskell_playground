@@ -38,10 +38,11 @@ readInt = read
 testInput = "12 13 14 15\n16 17 18 19\n20 21 22 23\n24 25 26 27"
 
 main = do
-  input <- getContents
+  --input <- getContents
   --let list2D = map (map readInt . words) $ lines input
   --let list = map readInt $ words input
   --printLines list2D
+  input <- readFile "number_square"
   let a = listArray ((0,0),(19,19)) $ map readInt $ words input
   putStrLn (show a)
   putStrLn "-----------------"
