@@ -1,33 +1,4 @@
 import Data.Array
-import Control.Monad (guard)
-
-data Rank = Two | Three | Four | Five | Six | Seven | Eight
-          | Nine | Ten | Jack | Queen | King | Ace
-          deriving (Eq, Ord, Show, Read, Enum, Ix)
-
-data Suit = Clubs | Diamonds | Hearts | Spades
-            deriving (Eq, Ord, Show, Read, Enum, Ix)
-
-data GenCard = GenCard Rank Suit
-               deriving (Eq, Ord, Show, Read)
- 
-genCardToInt :: GenCard -> Int
-genCardToInt (GenCard r s) = lookup ! (r,s)
-  where
-    lookup = listArray ((Two,Clubs),(Ace,Spades)) [x|x<-[0..51]]
-
-fibs :: Int -> Array Int Int
-fibs n = a
-  where a = array (0,n) ([(0,1), (1,1)]
-              ++ [(i, a!(i-2) + a!(i-1)) | i<-[2..n]])
-
-wavefront :: Int -> Array (Int,Int) Int
-wavefront n = a where
-              a = array ((1,1),(n,n))
-                    ([((1,j),1) | j <- [1..n]] ++
-                     [((i,1),1) | i <- [2..n]] ++
-                     [((i,j), a!(i,j-1) + a!(i-1,j-1) + a!(i-1,j))
-                                | i <- [2..n], j <- [2..n]])
 
 printLines :: Show a => [[a]] -> IO()
 printLines ss = (mapM_ . mapM_) (putStrLn . show) ss
@@ -35,20 +6,11 @@ printLines ss = (mapM_ . mapM_) (putStrLn . show) ss
 readInt:: String -> Int
 readInt = read 
 
-testInput = "12 13 14 15\n16 17 18 19\n20 21 22 23\n24 25 26 27"
-
 main = do
-  --input <- getContents
-  --let list2D = map (map readInt . words) $ lines input
-  --let list = map readInt $ words input
-  --printLines list2D
   input <- readFile "number_square"
+  -- Grid: 0,0 -> 19,19
   let a = listArray ((0,0),(19,19)) $ map readInt $ words input
-  putStrLn (show a)
-  putStrLn "-----------------"
   let products = (downProducts a) ++ (rightProducts a) ++ (downRightProducts a) ++ (upRightProducts a)
-  putStrLn (show products)
-  putStrLn "-----------------"
   putStrLn "Max four in a row="
   putStrLn $ show (maximum products)
 
@@ -92,5 +54,4 @@ upRightProducts a =
                              , let i4=(y-3,x+3)
                              ] 
 
---Product of all fours in a row - y, x
---Diagonal grid: 0,0 -> 19,19
+
