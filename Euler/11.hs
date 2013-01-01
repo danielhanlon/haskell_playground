@@ -52,7 +52,7 @@ main = do
 --DR: 0,0 -> 16,16
 --UR: 0,3 -> 16,19
 
-rightProducts :: (Array (Integer, Integer) Int) -> [Int]
+--rightProducts :: Array (Integer, Integer) Int -> [Int]
 rightProducts a = 
   [(a!i1 * a!i2 * a!i3 * a!i4) | x <- [0..], y <- [0..]
                                , let i1=(x,y)
