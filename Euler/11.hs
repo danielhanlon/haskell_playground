@@ -45,7 +45,7 @@ main = do
   let la = listArray ((0,0),(19,19)) $ map readInt $ words input
   let rp = rightProducts la
   putStrLn (show $ length rp)
-  putStrLn
+  putStrLn "-----------------"
   putStrLn (show rp)
 
 --Product of all fours in a row
