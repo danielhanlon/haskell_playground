@@ -47,7 +47,8 @@ main = do
   putStrLn (show a)
   putStrLn "-----------------"
   let products = (downProducts a) ++ (rightProducts a) ++ (downRightProducts a) ++ (upRightProducts a)
-  putStrLn "Max four in a row="++(show $ maximum products)
+  putStrLn "Max four in a row="
+  putStrLn (show $ maximum products)
 
 downProducts :: Array (Integer, Integer) Int -> [Int]
 downProducts a = 
