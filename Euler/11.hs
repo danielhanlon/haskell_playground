@@ -64,6 +64,7 @@ rightProducts a =
                              , let i2=(y,x+1)
                              , let i3=(y,x+2)
                              , let i4=(y,x+3), i4 <= ( snd $ bounds a)
+                             ]
 
 downRightProducts :: Array (Integer, Integer) Int -> [Int]
 downRightProducts a = 
@@ -72,7 +73,7 @@ downRightProducts a =
                              , let i2=(y+1,x+1)
                              , let i3=(y+2,x+2)
                              , let i4=(y+3,x+3), i4 <= (snd $ bounds a)
-
+                             ]
 
 upRightProducts :: Array (Integer, Integer) Int -> [Int]
 upRightProducts a =
@@ -81,7 +82,8 @@ upRightProducts a =
                              , let i2=(y-1,x+1)
                              , let i3=(y-2,x+2)
                              , let i4=(y-3,x+3), i4 >= (0,0)
- 
+                             ] 
+
 --Product of all fours in a row - y, x
 --Diagonal grid: 0,0 -> 19,19
 --R: 0,0 -> 16,19
