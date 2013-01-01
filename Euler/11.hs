@@ -43,7 +43,10 @@ main = do
   --let list = map readInt $ words input
   --printLines list2D
   let la = listArray ((0,0),(19,19)) $ map readInt $ words input
-  putStrLn (show $ rightProducts la)
+  let rp = rightProducts la
+  putStrLn $ length rp
+  putStrLn
+  putStrLn (show rp)
 
 --Product of all fours in a row
 --Diagonal grid: 0,0 -> 19,19
