@@ -45,23 +45,46 @@ main = do
   let la = listArray ((0,0),(19,19)) $ map readInt $ words input
   putStrLn (show la)
   putStrLn "-----------------"
-  let rp = rightProducts la
-  putStrLn (show $ length rp)
-  putStrLn "-----------------"
-  putStrLn (show rp)
+  let products = (downProducts a) ++ (rightProducts a) ++ (downRightProducts a) ++ (upRightProducts a)
+  putStrLn "Max four in a row="++(show $ maximum products)
 
---Product of all fours in a row
+downProducts :: Array (Integer, Integer) Int -> [Int]
+downProducts a = 
+  [a!i1 * a!i2 * a!i3 * a!i4 | x <- [0..19], y <- [0..19]
+                             , let i1=(y,x)
+                             , let i2=(y+1,x)
+                             , let i3=(y+2,x)
+                             , let i4=(y+3,x) , i4 <= ( snd $ bounds a)
+                             ]
+
+rightProducts :: Array (Integer, Integer) Int -> [Int]
+rightProducts a = 
+  [a!i1 * a!i2 * a!i3 * a!i4 | x <- [0..19], y <- [0..19]
+                             , let i1=(y,x)
+                             , let i2=(y,x+1)
+                             , let i3=(y,x+2)
+                             , let i4=(y,x+3), i4 <= ( snd $ bounds a)
+
+downRightProducts :: Array (Integer, Integer) Int -> [Int]
+downRightProducts a = 
+  [a!i1 * a!i2 * a!i3 * a!i4 | x <- [0..19], y <- [0..19]
+                             , let i1=(y,x)
+                             , let i2=(y+1,x+1)
+                             , let i3=(y+2,x+2)
+                             , let i4=(y+3,x+3), i4 <= (snd $ bounds a)
+
+
+upRightProducts :: Array (Integer, Integer) Int -> [Int]
+upRightProducts a =
+  [a!i1 * a!i2 * a!i3 * a!i4 | x <- [0..19], y <- [0..19]
+                             , let i1=(y,x)
+                             , let i2=(y-1,x+1)
+                             , let i3=(y-2,x+2)
+                             , let i4=(y-3,x+3), i4 >= (0,0)
+ 
+--Product of all fours in a row - y, x
 --Diagonal grid: 0,0 -> 19,19
 --R: 0,0 -> 16,19
 --D: 0,0 -> 19,16
 --DR: 0,0 -> 16,16
 --UR: 0,3 -> 16,19
-
-rightProducts :: Array (Integer, Integer) Int -> [Int]
-rightProducts a = 
-  [a!i1 * a!i2 * a!i3 * a!i4 | x <- [0..19], y <- [0..19]
-                             , let i1=(x,y)
-                             , let i2=(x+1,y)
-                             , let i3=(x+2,y)
-                             , let i4=(x+3,y) , i4 <= ( snd $ bounds a)
-                             ]
