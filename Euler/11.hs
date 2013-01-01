@@ -42,7 +42,7 @@ main = do
   --let list = map readInt $ words input
   --printLines list2D
   let la = listArray ((0,0),(19,19)) $ map readInt $ words input
-  putStrLn (show la)
+  putStrLn (show rightProducts la)
 
 --Product of all fours in a row
 --Diagonal grid: 0,0 -> 19,19
@@ -51,4 +51,9 @@ main = do
 --DR: 0,0 -> 16,16
 --UR: 0,3 -> 16,19
 
---rightProducts ::  
+rightProducts :: Array (Integer, Integer) Int -> [Int]
+rightProducts a = 
+  [a!(x,y) * a!(x+1,y) * a!(x+2,y) * a!(x+3,y) | x<-[0..lastRight], y<-[0..lastDown]]
+  where
+    lastRight = (fst $ snd $ bounds a) - 4
+    lastDown = snd $ snd $ bounds a
