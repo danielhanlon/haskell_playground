@@ -50,7 +50,7 @@ main = do
   putStrLn (show products)
   putStrLn "-----------------"
   putStrLn "Max four in a row="
-  putStrLn $ maximum products
+  putStrLn $ show (maximum products)
 
 --D: 0,0 -> 19,16
 downProducts :: Array (Integer, Integer) Int -> [Int]
