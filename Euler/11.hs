@@ -42,8 +42,8 @@ main = do
   --let list2D = map (map readInt . words) $ lines input
   --let list = map readInt $ words input
   --printLines list2D
-  let la = listArray ((0,0),(19,19)) $ map readInt $ words input
-  putStrLn (show la)
+  let a = listArray ((0,0),(19,19)) $ map readInt $ words input
+  putStrLn (show a)
   putStrLn "-----------------"
   let products = (downProducts a) ++ (rightProducts a) ++ (downRightProducts a) ++ (upRightProducts a)
   putStrLn "Max four in a row="++(show $ maximum products)
