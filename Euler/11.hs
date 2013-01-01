@@ -58,5 +58,5 @@ rightProducts a =
                                , let i1=(x,y)
                                , let i2=(x+1,y)
                                , let i3=(x+2,y)
-                               , let i4=(x+3,y) , i4 <= bounds a
+                               , let i4=(x+3,y) , i4 <= snd $ bounds a
                                ]
