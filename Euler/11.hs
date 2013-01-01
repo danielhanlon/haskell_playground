@@ -32,7 +32,7 @@ wavefront n = a where
 printLines :: Show a => [[a]] -> IO()
 printLines ss = (mapM_ . mapM_) (putStrLn . show) ss
   
-readInt :: String -> Int
+readInt:: String -> Int
 readInt = read 
 
 testInput = "12 13 14 15\n16 17 18 19\n20 21 22 23\n24 25 26 27"
@@ -43,6 +43,8 @@ main = do
   --let list = map readInt $ words input
   --printLines list2D
   let la = listArray ((0,0),(19,19)) $ map readInt $ words input
+  putStrLn (show la)
+  putStrLn "-----------------"
   let rp = rightProducts la
   putStrLn (show $ length rp)
   putStrLn "-----------------"
