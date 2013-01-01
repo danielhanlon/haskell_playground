@@ -54,17 +54,9 @@ main = do
 
 rightProducts :: Array (Integer, Integer) Int -> [Int]
 rightProducts a = 
-  [a!i1 * a!i2 * a!i3 * a!i4 | x<-[0..], y<-[0..]
-                             , let i1=(x,y), let i2=(x+1,y), let i3=(x+2,y), let i4=(x+3,y)
-                             , i4 <= bounds a]
-
---rp :: Array (Integer, Integer) Int -> [Int]
---rp a = do
---  x<-[0..]
---  y<-[0..]
---  let i1=(x,y)
---  let i2=(x+1,y)
---  let i3=(x+2,y)
---  let i4=(x+3,y)
---  guard (i4 <= bounds a)
---  return a!i1 * a!i2 * a!i3 * a!i4
+  [(a!i1 * a!i2 * a!i3 * a!i4) | x<-[0..], y<-[0..]
+                               , let i1=(x,y)
+                               , let i2=(x+1,y)
+                               , let i3=(x+2,y)
+                               , let i4=(x+3,y) , i4 <= bounds a
+                               ]
