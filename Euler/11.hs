@@ -51,4 +51,4 @@ main = do
 --DR: 0,0 -> 16,16
 --UR: 0,3 -> 16,19
 
-rightProducts ::  
+--rightProducts ::  
