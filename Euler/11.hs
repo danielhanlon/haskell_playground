@@ -54,7 +54,7 @@ main = do
 
 --rightProducts :: Array (Integer, Integer) Int -> [Int]
 rightProducts a = 
-  [(a!i1 * a!i2 * a!i3 * a!i4) | x <- [0..19], y <- [0..19]
+  [(a!i1) * (a!i2) * (a!i3) * (a!i4) | x <- [0..19], y <- [0..19]
                                , let i1=(x,y)
                                , let i2=(x+1,y)
                                , let i3=(x+2,y)
