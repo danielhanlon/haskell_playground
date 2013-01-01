@@ -79,7 +79,7 @@ downRightProducts a =
 
 upRightProducts :: Array (Integer, Integer) Int -> [Int]
 upRightProducts a =
-  [a!i1 * a!i2 * a!i3 * a!i4 | x <- [0..19], y <- [0..19]
+  [a!i1 * a!i2 * a!i3 * a!i4 | x <- [0..19], y <- [3..19]
                              , let i1=(y,x)
                              , let i2=(y-1,x+1)
                              , let i3=(y-2,x+2)
