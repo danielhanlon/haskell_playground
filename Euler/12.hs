@@ -14,4 +14,13 @@ numberOfFactors n = foldr ((+) . isFactor) 0 [1..n]
 			| n `mod` f == 0	= 1
 			| otherwise 		= 0
 
-
+main = do
+  args@(~( aString : aInteger : [] ) ) <- getArgs
+  let parsed@( ~[(n,_)] ) = reads aInteger
+  if length args /= 2 || L.null parsed
+    then do
+      name <- getProgName
+      hPutStrLn stderr $ "usage: " ++ name ++ " <string> <integer>"
+      exitFailure
+    else do
+      doStuffWith aString n
