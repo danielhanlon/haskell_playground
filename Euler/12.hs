@@ -1,4 +1,4 @@
-import System
+import System.Exit
 
 upTo n (x:xs)
   | x > n = []
