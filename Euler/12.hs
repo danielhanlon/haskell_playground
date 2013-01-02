@@ -2,6 +2,8 @@ upTo n (x:xs)
   | x > n = []
   | otherwise = x:(upTo n xs)
 
+upToIncluding n xs = upTo (n+1) xs
+
 triangular :: [Int]
 triangular = [foldr (+) 0 [1..n] | n <- [1..]]
 
@@ -12,8 +14,4 @@ numberOfFactors n = foldr ((+) . isFactor) 0 [1..n]
 			| n `mod` f == 0	= 1
 			| otherwise 		= 0
 
-upTo n (x:xs)
-  | x >= n = []
-  | otherwise= x:(upTo n xs)
 
-upToIncluding n xs = upTo (n+1) xs
