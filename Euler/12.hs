@@ -1,5 +1,6 @@
 import System.Exit
 import System.Environment
+import System.IO
 
 upTo n (x:xs)
   | x > n = []
