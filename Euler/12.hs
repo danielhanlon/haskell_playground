@@ -28,4 +28,4 @@ main = do
       hPutStrLn stderr $ "usage: " ++ name ++ " <string> <integer>"
       exitFailure
     else do
-      putStrLn aString ++ (show n)
+      putStrLn $ aString ++ (show n)
