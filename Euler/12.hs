@@ -1,3 +1,5 @@
+import System
+
 upTo n (x:xs)
   | x > n = []
   | otherwise = x:(upTo n xs)
