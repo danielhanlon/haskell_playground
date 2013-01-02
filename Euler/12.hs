@@ -11,3 +11,9 @@ numberOfFactors n = foldr ((+) . isFactor) 0 [1..n]
 		isFactor f 
 			| n `mod` f == 0	= 1
 			| otherwise 		= 0
+
+upTo n (x:xs)
+  | x >= n = []
+  | otherwise= x:(upTo n xs)
+
+upToIncluding n xs = upTo (n+1) xs
