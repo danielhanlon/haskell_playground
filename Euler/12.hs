@@ -1,3 +1,6 @@
+-- What is the value of the first triangle number
+-- to have over five hundred divisors?
+
 import System.Exit
 import System.Environment
 import System.IO
