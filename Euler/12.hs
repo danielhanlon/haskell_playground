@@ -23,9 +23,10 @@ main = do
   args@(~( aString : aInteger : [] ) ) <- getArgs
   let parsed@( ~[(n,_)] ) = reads aInteger
   if length args /= 2 || L.null parsed
-    then do
-      name <- getProgName
-      hPutStrLn stderr $ "usage: " ++ name ++ " <string> <integer>"
-      exitFailure
+  	then do
+    	name <- getProgName
+      	hPutStrLn stderr $ "usage: " ++ name ++ " <string> <integer>"
+      	exitFailure
     else do
-      putStrLn (aString ++ (show n))
+    	let n_string = show n
+      	putStrLn (aString ++ n_string)
