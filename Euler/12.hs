@@ -15,7 +15,7 @@ upToIncluding n xs = upTo (n+1) xs
 triangular :: [Int]
 triangular = [foldr (+) 0 [1..n] | n <- [1..]]
 
-tri = [n*(n+1)/2|n<-[1..]]
+tri = [floor (n*(n+1)/2)|n<-[1..]]
 
 numberOfFactors n = foldr ((+) . isFactor) 0 [1..n] 
 	where
