@@ -51,7 +51,7 @@ facs n
 						cp = primes!!primeCount
 						power = fac'' 0 cp n
 						fac'' pow pri nn
-							|	( nn `mod` pri == 0 ) = fac'' (pow+1) (pri*cp) (nn/pri)
+							|	( nn `mod` pri == 0 ) = fac'' (pow+1) (pri*cp) (nn `div` pri)
 							|	otherwise = pow
 
 
