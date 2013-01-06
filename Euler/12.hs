@@ -17,7 +17,6 @@ triangular = [foldr (+) 0 [1..n] | n <- [1..]]
 
 tri = [n*(n+1)/2|n<-[1..]]
 
-numberOfFactors :: Int -> Int
 numberOfFactors n = foldr ((+) . isFactor) 0 [1..n] 
 	where
 		isFactor f 
