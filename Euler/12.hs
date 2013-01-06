@@ -44,14 +44,14 @@ facs n
 	where
 		fac' :: Int -> Int -> Int -> Int
 		fac' n factors primeCount 
-			| ( primes!primeCount * primes!primeCount > n ) = factors 
+			| ( primes!!primeCount * primes!!primeCount > n ) = factors 
 			| otherwise =
 				fac' n (factors * (power+1)) (primeCount+1)
 					where
-						cp = primes!primeCount
+						cp = primes!!primeCount
 						power = fac'' 0 cp n
-						fac'' pow pri nn |
-							( nn `mod` pri == 0 ) = fac'' (pow+1) (pri*cp) (nn/pri)
-							otherwise = pow
+						fac'' pow pri nn
+							|	( nn `mod` pri == 0 ) = fac'' (pow+1) (pri*cp) (nn/pri)
+							|	otherwise = pow
 
 
