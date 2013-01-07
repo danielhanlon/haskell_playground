@@ -40,7 +40,7 @@ primes = [n | n<-[1..], memoizedIsPrime n]
 facs :: Int -> Int
 facs n 
 	| n == 1 = 1
-	| n > 1 = 2 * fac' n 1 1
+	| n > 1 = 2 * fac' n 1 2
 	where
 		fac' :: Int -> Int -> Int -> Int
 		fac' n factors primeCount 
@@ -49,7 +49,7 @@ facs n
 				fac' n (factors * (power+1)) (primeCount+1)
 					where
 						cp = primes!!primeCount
-						power = fac'' 0 cp n
+						power = fac'' 0 1 n
 						fac'' pow pri nn
 							|	( nn `mod` pri == 0 ) = fac'' (pow+1) (pri*cp) (nn `div` pri)
 							|	otherwise = pow
