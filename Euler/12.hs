@@ -54,4 +54,5 @@ facs n
 							|	( nn `mod` pri == 0 ) = fac'' (pow+1) (pri*cp) (nn `div` pri)
 							|	otherwise = pow
 
-
+powerSet [] = []
+powerSet (x:xs) = xs : map (x:) (powerSet xs) ++ (powerSet xs)
