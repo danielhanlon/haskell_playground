@@ -7,7 +7,7 @@ import Happstack.Server (FromReqURI(..), nullConf, simpleHTTP
 
 data Subject = World | Haskell
 
-sayHello : Subject -> String
+sayHello :: Subject -> String
 sayHello World = "Hello, World!"
 sayHello Haskell = "Greetings, Haskell!"
 
