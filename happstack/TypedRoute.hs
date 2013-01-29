@@ -18,6 +18,6 @@ instance FromReqURI Subject where
       "world" -> Just World
       _ -> Nothing
 
-main = IO ()
+main :: IO ()
 main = simpleHTTP nullConf $ dir "hello"
           $ path $ \subject -> ok $ (sayHello subject)
