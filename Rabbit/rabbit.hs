@@ -11,11 +11,19 @@ main = do
   bindQueue chan "myQueue" "myExchange" "myKey"
 
   -- subscribe to the queue
+
+  consumeMsgs chan "myQueue" Ack myCallback
   consumeMsgs chan "myQueue" Ack myCallback
 
   -- publish a message to our new exchange
   publishMsg chan "myExchange" "myKey" 
     newMsg {msgBody = (BL.pack "hello world"), 
+            msgDeliveryMode = Just Persistent}
+
+  getLine
+
+  publishMsg chan "myExchange" "myKey"
+    newMsg {msgBody = (BL.pack "goodnight world"),
             msgDeliveryMode = Just Persistent}
 
   getLine -- wait for keypress
