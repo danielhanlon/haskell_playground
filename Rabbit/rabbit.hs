@@ -27,6 +27,13 @@ main = do
             msgDeliveryMode = Just Persistent}
 
   getLine -- wait for keypress
+
+  publishMsg chan "myExchange" "myKey"
+    newMsg {msgBody = (BL.pack "goodnight again"),
+            msgDeliveryMode = Just Persistent}
+
+  getLine -- wait for keypress
+
   closeConnection conn
   putStrLn "connection closed"
 
