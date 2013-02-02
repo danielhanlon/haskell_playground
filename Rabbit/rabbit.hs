@@ -13,7 +13,7 @@ main = do
   -- subscribe to the queue
 
   consumeMsgs chan "myQueue" Ack myCallback
-  consumeMsgs chan "myQueue" Ack myCallback
+--  consumeMsgs chan "myQueue" Ack myCallback
 
   -- publish a message to our new exchange
   publishMsg chan "myExchange" "myKey" 
