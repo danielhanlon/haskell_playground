@@ -14,4 +14,4 @@ pentaflake' n = appends
 
 pentaflake n = pentaflake' n # fc blue # bg white
 
-example = pad 1.1 $ pentaflake 4
+main = defaultMain ( pad 1.1 $ pentaflake 4 )
