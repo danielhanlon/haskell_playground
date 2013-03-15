@@ -1,4 +1,4 @@
-{-# LANGUAGE NoMonomorphismRestrictions #-}
+{-# LANGUAGE NoMonomorphismRestriction #-}
 
 import Diagrams.Prelude
 
