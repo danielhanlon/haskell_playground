@@ -12,4 +12,6 @@ pentaflake' n = appends
 	     pCenter = pentaflake' (n-1)
 	     pOutside = pCenter # opacity 0.8
 
+pentaflake n = pentaflake' n # fc blue # bg white
+
 example = pad 1.1 $ pentaflake 4
