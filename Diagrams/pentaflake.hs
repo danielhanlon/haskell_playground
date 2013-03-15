@@ -9,8 +9,8 @@ pentaflake' n = appends
 	where vs = iterateN 5 (rotateBy (1/5))
 		 . (if odd n then negateV else id)
 		 $ unitY
-	     pCenter = pentaflake' (n-1)
-	     pOutside = pCenter # opacity 0.8
+	       pCenter = pentaflake' (n-1)
+	       pOutside = pCenter # opacity 0.8
 
 pentaflake n = pentaflake' n # fc blue # bg white
 
