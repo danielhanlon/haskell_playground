@@ -1,6 +1,7 @@
 {-# LANGUAGE NoMonomorphismRestriction #-}
 
 import Diagrams.Prelude
+import Diagrams.Backend.SVG.CmdLine
 
 pentaflake' 0 = regPoly 5 1 # lw 0
 pentaflake' n = appends pCenter (zip vs (repeat (rotateBy (1/2) pOutside)))
