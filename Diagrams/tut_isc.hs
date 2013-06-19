@@ -3,4 +3,5 @@
 import Diagrams.Prelude
 import Diagrams.Backend.SVG.CmdLine
 
-main = defaultMain $ circle 1 # fc red # lw 0 ||| circle 1 # fc green # lw 0
+pCircle1' = circle1 # fc blue # lw 0.05 # lc purple # dashing [0.2,0.05] 0
+main = defaultMain $ square 1 # fc aqua `atop` pCircle1'
