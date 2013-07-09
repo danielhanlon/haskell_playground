@@ -1,0 +1,13 @@
+/static StaticR Static getStatic
+/auth   AuthR   Auth   getAuth
+
+/favicon.ico FaviconR GET
+/robots.txt RobotsR GET
+
+/ HomeR GET POST
+/echo/#String EchoR GET
+/echo2/#Text Echo2R GET
+/mirror MirrorR GET POST
+/treacle/#Food TreacleR GET POST
+/treacle2 Treacle2R GET
+/tara/#Food TaraR GET

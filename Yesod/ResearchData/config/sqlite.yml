@@ -1,0 +1,20 @@
+Default: &defaults
+  database: ResearchData.sqlite3
+  poolsize: 10
+
+Development:
+  <<: *defaults
+
+Testing:
+  database: ResearchData_test.sqlite3
+  <<: *defaults
+
+Staging:
+  database: ResearchData_staging.sqlite3
+  poolsize: 100
+  <<: *defaults
+
+Production:
+  database: ResearchData_production.sqlite3
+  poolsize: 100
+  <<: *defaults
