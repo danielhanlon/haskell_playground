@@ -16,7 +16,7 @@ isPal (a:as) = a == s && isPal rest
     rest = tail sa
   
 convert :: (Double, [Char]) -> (Double, [Char])
-convert d u
+convert (d u)
   | u == "m"    = ( d*m2yd, "yd"  )
   | u == "yd"   = ( d/m2yd, "m"   )
   | u == "L"    = ( d*l2gal, "gal")
