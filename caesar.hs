@@ -1,8 +1,12 @@
 import Data.Char (ord, chr)
+import System.Console (Readline)
 
 main = do
---  input <- getChar
-  putChar $ caesar 3 "Hello World!"
+  maybeLine <- readline "% "
+  case maybeLine of
+    Nothing       -> return ()
+    Just "exit"   -> return ()
+    Just line     -> putStrLn $ caesar 3 line
 
 caesar :: Int -> String -> String
 caesar shift plaintext = caesar' plaintext
