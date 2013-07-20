@@ -10,7 +10,7 @@ caesar shift plaintext = caesar' plaintext
     enc c 
       | c == ' '   = " "
       | otherwise  = [chr newC_chr]
-      where c_chr = (ord $ toUpper c)-65
+      where c_chr    = (ord $ toUpper c)-65
             newC_chr = 65 + ((shift + c_chr) `mod` 26)
-    caesar' (c:[]) = enc c
+    caesar' []     = []
     caesar' (c:cs) = enc c ++ caesar' cs
