@@ -1,8 +1,7 @@
 import Data.Char (ord, chr)
-import System.Console.ReadLine (readline)
 
 main = do
-  maybeLine <- readline "% "
+  MaybeLine <- readline "% "
   case maybeLine of
     Nothing       -> return ()
     Just "exit"   -> return ()
