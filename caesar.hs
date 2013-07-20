@@ -1,8 +1,8 @@
 import Data.Char (ord, chr)
 
 main = do
-  input <- getChar
-  putChar $ caesar 3 input
+--  input <- getChar
+  putChar $ caesar 3 "Hello World!"
 
 caesar :: Int -> String -> String
 caesar shift plaintext = caesar' plaintext
