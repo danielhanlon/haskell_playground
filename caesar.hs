@@ -7,7 +7,9 @@ main = do
 caesar :: Int -> String -> String
 caesar shift plaintext = caesar' plaintext
   where
-    enc c = [chr newC_chr]
+    enc c = 
+      | c == " "   = " "
+      | otherwise  = [chr newC_chr]
       where c_chr = (ord $ toUpper c)-65
             newC_chr = 65 + ((shift + c_chr) `mod` 26)
     caesar' (c:[]) = enc c
