@@ -1,5 +1,5 @@
 import Data.Char (ord, chr)
-import System.Console (Readline)
+import System.Console.ReadLine (readline)
 
 main = do
   maybeLine <- readline "% "
