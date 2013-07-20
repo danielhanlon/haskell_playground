@@ -2,15 +2,15 @@ import Data.Char (ord, chr, toUpper)
 
 main = do
   line <- getLine
-  putStrLn $ caesar 3 line
+  if isPal line
+    then putStrLn "Palindrome!"
+    else putStrLn "..not a palindrome"
 
-caesar :: Int -> String -> String
-caesar shift plaintext = caesar' plaintext
+isPal :: Eq a => [a] -> Bool
+isPal [] = True
+isPal (a:as) = a == s && isPal rest
   where
-    enc c 
-      | c == ' '   = " "
-      | otherwise  = [chr newC_chr]
-      where c_chr    = (ord $ toUpper c)-65
-            newC_chr = 65 + ((shift + c_chr) `mod` 26)
-    caesar' []     = []
-    caesar' (c:cs) = enc c ++ caesar' cs
+    sa = reverse as
+    s = head sa
+    rest = tail sa
+  
