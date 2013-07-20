@@ -7,6 +7,7 @@ main = do
     else putStrLn "..not a palindrome"
 
 isPal :: Eq a => [a] -> Bool
+isPal []     = True
 isPal (a:[]) = True
 isPal (a:as) = a == s && isPal rest
   where
