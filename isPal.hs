@@ -23,7 +23,7 @@ convert (d, u)
   | u == "gal"  = ( d/l2gal, "L"  )
   | u == "kg"   = ( d*kg2lb, "lb" )
   | u == "lb"   = ( d/kg2lb, "kg" )
-  | otherwise   = error('Incorrect units')
+  | otherwise   = error "Incorrect units"
     where
       m2yd  = 1.09361
       l2gal = 0.264172
