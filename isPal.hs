@@ -18,7 +18,7 @@ isPal (a:as) = a == s && isPal rest
 convert :: (Double, [Char]) -> (Double, [Char])
 convert d u
   | u == "m"    = ( d*m2yd, "yd"  )
-  | u == "yd"   = ( g/m2yd, "m"   )
+  | u == "yd"   = ( d/m2yd, "m"   )
   | u == "L"    = ( d*l2gal, "gal")
   | u == "gal"  = ( d/l2gal, "L"  )
   | u == "kg"   = ( d*kg2lb, "lb" )
