@@ -15,3 +15,15 @@ isPal (a:as) = a == s && isPal rest
     s = head sa
     rest = tail sa
   
+convert :: (Double, [Char]) -> (Double, [Char])
+convert d u
+  | u == "m"    = ( d*m2yd, "yd"  )
+  | u == "yd"   = ( g/m2yd, "m"   )
+  | u == "L"    = ( d*l2gal, "gal")
+  | u == "gal"  = ( d/l2gal, "L"  )
+  | u == "kg"   = ( d*kg2lb, "lb" )
+  | u == "lb"   = ( d/kg2lb, "kg" )
+    where
+      m2yd  = 1.09361
+      l2gal = 0.264172
+      kg2lb = 2.20462
