@@ -1,11 +1,8 @@
 import Data.Char (ord, chr)
 
 main = do
-  MaybeLine <- readline "% "
-  case maybeLine of
-    Nothing       -> return ()
-    Just "exit"   -> return ()
-    Just line     -> putStrLn $ caesar 3 line
+  line <- getLine
+  putStrLn $ caesar 3 line
 
 caesar :: Int -> String -> String
 caesar shift plaintext = caesar' plaintext
