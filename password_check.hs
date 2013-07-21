@@ -1,5 +1,7 @@
+
 check :: String -> Bool
 check pw = undefined
+  where fifteen_chars = 
 
 main = do 
   pw <- getLine
