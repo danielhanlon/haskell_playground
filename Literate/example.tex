@@ -263,10 +263,17 @@ This is the famous ‘‘Hello world’’ example,
 written in Haskell:
 \begin{hscode}\SaveRestoreHook
 \column{B}{@{}>{\hspre}l<{\hspost}@{}}%
+\column{3}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{7}{@{}>{\hspre}c<{\hspost}@{}}%
 \column{7E}{@{}l@{}}%
 \column{11}{@{}>{\hspre}l<{\hspost}@{}}%
+\column{18}{@{}>{\hspre}l<{\hspost}@{}}%
+\column{25}{@{}>{\hspre}l<{\hspost}@{}}%
+\column{26}{@{}>{\hspre}l<{\hspost}@{}}%
+\column{39}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{E}{@{}>{\hspre}l<{\hspost}@{}}%
+\>[B]{}\mathbf{import}\;\Conid{Prelude}\;\Varid{hiding}\;(\Varid{zip},\Varid{zipWith},\Varid{partition}){}\<[E]%
+\\
 \>[B]{}\Varid{main}{}\<[7]%
 \>[7]{}\mathbin{::}{}\<[7E]%
 \>[11]{}\Conid{IO}\;(){}\<[E]%
@@ -274,6 +281,30 @@ written in Haskell:
 \>[B]{}\Varid{main}{}\<[7]%
 \>[7]{}\mathrel{=}{}\<[7E]%
 \>[11]{}\Varid{putStrLn}\;\text{\tt \char34 Hello,~world!\char34}{}\<[E]%
+\\[\blanklineskip]%
+\>[B]{}\Varid{zip}\mathbin{::}[\mskip1.5mu \Varid{a}\mskip1.5mu]\to [\mskip1.5mu \Varid{b}\mskip1.5mu]\to [\mskip1.5mu (\Varid{a},\Varid{b})\mskip1.5mu]{}\<[E]%
+\\
+\>[B]{}\Varid{zip}\mathrel{=}\Varid{zipWith}\;(\lambda \Varid{a}\;\Varid{b}\to (\Varid{a},\Varid{b})){}\<[E]%
+\\[\blanklineskip]%
+\>[B]{}\Varid{zipWith}\mathbin{::}(\Varid{a}\to \Varid{b}\to \Varid{c})\to [\mskip1.5mu \Varid{a}\mskip1.5mu]\to [\mskip1.5mu \Varid{b}\mskip1.5mu]\to [\mskip1.5mu \Varid{c}\mskip1.5mu]{}\<[E]%
+\\
+\>[B]{}\Varid{zipWith}\;\Varid{z}\;(\Varid{a}\mathbin{:}\Varid{as})\;(\Varid{b}\mathbin{:}\Varid{bs})\mathrel{=}\Varid{z}\;\Varid{a}\;\Varid{b}\mathbin{:}\Varid{zipWith}\;\Varid{z}\;\Varid{as}\;\Varid{bs}{}\<[E]%
+\\
+\>[B]{}\Varid{zipWith}\;\anonymous \;\anonymous \;{}\<[18]%
+\>[18]{}\anonymous {}\<[25]%
+\>[25]{}\mathrel{=}[\mskip1.5mu \mskip1.5mu]{}\<[E]%
+\\[\blanklineskip]%
+\>[B]{}\Varid{partition}\mathbin{::}(\Varid{a}\to \Conid{Bool})\to [\mskip1.5mu \Varid{a}\mskip1.5mu]\to ([\mskip1.5mu \Varid{a}\mskip1.5mu],[\mskip1.5mu \Varid{a}\mskip1.5mu]){}\<[E]%
+\\
+\>[B]{}\Varid{partition}\;\Varid{p}\;\Varid{xs}\mathrel{=}\Varid{foldr}\;\Varid{select}\;([\mskip1.5mu \mskip1.5mu],[\mskip1.5mu \mskip1.5mu])\;\Varid{xs}{}\<[E]%
+\\
+\>[B]{}\hsindent{3}{}\<[3]%
+\>[3]{}\mathbf{where}\;\Varid{select}\;\Varid{x}\;(\Varid{ts},\Varid{fs})\mid \Varid{p}\;\Varid{x}{}\<[39]%
+\>[39]{}\mathrel{=}(\Varid{x}\mathbin{:}\Varid{ts},\Varid{fs}){}\<[E]%
+\\
+\>[3]{}\hsindent{23}{}\<[26]%
+\>[26]{}\mid \Varid{otherwise}{}\<[39]%
+\>[39]{}\mathrel{=}(\Varid{ts},\Varid{x}\mathbin{:}\Varid{fs}){}\<[E]%
 \ColumnHook
 \end{hscode}\resethooks
 \end{document}
