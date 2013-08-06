@@ -1,3 +1,4 @@
+\begin{code}
 {-# Language NoMonomorphismRestriction #-}
 import Diagrams.Prelude
 import Diagrams.Backend.Cairo.CmdLine
@@ -9,3 +10,4 @@ sierpinski n =          s
    where s = sierpinski (n-1)
 
 main = defaultMain $ sierpinski 7
+\end{code}
