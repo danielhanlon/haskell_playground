@@ -4,7 +4,7 @@
 This is the famous ‘‘Hello world’’ example,
 written in Haskell:
 \begin{code}
-#import
+import Prelude hiding (zip, zipWith, partition)
 main  ::  IO ()
 main  =   putStrLn "Hello, world!"
 
