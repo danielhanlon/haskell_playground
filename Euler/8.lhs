@@ -1,3 +1,4 @@
+\begin{code}
 import Data.Array
 
 fibonacci :: (Enum a, Num a) => [a] 
@@ -99,3 +100,4 @@ f x = case x of
   2 -> 16
 
 squares = array (1,100) [(i,i*i)|i<-[1..100]]
+\end{code}
