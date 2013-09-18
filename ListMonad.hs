@@ -8,5 +8,4 @@ getTuples = do
     let y = 2
     return $ MyResult (x,y)
 
-main = do
-    mapM putStrLn $ mapM show getTuples
+main = mapM putStrLn $ mapM show getTuples
