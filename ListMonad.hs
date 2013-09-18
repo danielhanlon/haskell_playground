@@ -9,4 +9,4 @@ getTuples = do
     return $ MyResult (x,y)
 
 main = do
-    mapM putStrLn getTuples
+    mapM putStrLn . show getTuples
