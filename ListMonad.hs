@@ -8,4 +8,4 @@ getTuples = do
     y <- [10..15]
     return $ show MyResult (x,y)
 
-main = mapM putStrLn $ mapM show getTuples
+-- main = mapM putStrLn $ mapM show getTuples
