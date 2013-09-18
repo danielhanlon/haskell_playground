@@ -5,7 +5,7 @@ instance Show MyResult where
 
 getTuples = do 
     x <- [1..5]
-    let y = 2
+    let y = [10..15]
     return $ MyResult (x,y)
 
 main = mapM putStrLn $ mapM show getTuples
