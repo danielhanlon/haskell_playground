@@ -6,6 +6,6 @@ instance Show MyResult where
 getTuples = do 
     x <- [1..5]
     y <- [10..15]
-    return $ MyResult (x,y)
+    return $ show MyResult (x,y)
 
 main = mapM putStrLn $ mapM show getTuples
