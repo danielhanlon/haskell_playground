@@ -4,8 +4,8 @@ instance Show MyResult where
     show (MyResult (x,y)) = (show x) ++ "," ++ (show y)
 
 getTuples = do 
-    x <- [1..10]
-    y <- [2..11]
+    x <- [1..5]
+    let y = 2
     return $ MyResult (x,y)
 
 main = do
