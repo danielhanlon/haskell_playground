@@ -1,4 +1,7 @@
-data MyResult = MyResult (Int,Int) deriving Show
+data MyResult = MyResult (Int,Int)
+
+instance Show MyResult where
+    show MyResult (x,y) = (show x) ++ "," ++ (show y)
 
 getTuples = do 
     x <- [1..10]
