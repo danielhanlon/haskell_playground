@@ -1,5 +1,4 @@
-{-# LANGUAGE TypeFamilies, QuasiQuotes, MultiParamTypeClasses,
-  -              TemplateHaskell, OverloadedStrings #-}
+{-# LANGUAGE TypeFamilies, QuasiQuotes, MultiParamTypeClasses,TemplateHaskell, OverloadedStrings #-}
 import Yesod
 
 data HelloWorld = HelloWorld
