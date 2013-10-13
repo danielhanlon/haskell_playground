@@ -1,0 +1,24 @@
+Default: &defaults
+  user: test1
+  password: test1
+  host: localhost
+  database: test1
+  connections: 10
+
+Development:
+  <<: *defaults
+
+Testing:
+  database: test1_test
+  <<: *defaults
+
+Staging:
+  database: test1_staging
+  connections: 100
+  <<: *defaults
+
+Production:
+  database: test1_production
+  connections: 100
+  host: localhost
+  <<: *defaults
