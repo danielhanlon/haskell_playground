@@ -3,14 +3,17 @@ import Yesod
 
 data HelloWorld = HelloWorld
 
-mkYesod "HelloWorld" [parseRoutes|
+mkYesod "Links" [parseRoutes|
 / HomeR GET
+/page1 Page1R GET
+/page2 Page2R GET
 |]
 
-instance Yesod HelloWorld
+instance Yesod Links
 
-getHomeR :: Handler RepHtml
-getHomeR = defaultLayout [whamlet|Hello World!|]
+getHomeR = defaultLayout [whamlet|<a href=@{Page1R}Go to page 1!|]
+getPage1R = defaultLayout [whamlet|<a href=@{Page2R}Go to page 2!|]
+getPage2R = defaultLayout [whamlet|<a href=@{HomeR}Got home!|]
 
 main :: IO ()
-main = warpDebug 3000 HelloWorld
+main = warpDebug 3000 Links
