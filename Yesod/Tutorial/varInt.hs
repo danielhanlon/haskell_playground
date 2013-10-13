@@ -1,4 +1,4 @@
-{# LANGUAGE QuasiQuotes #-}
+{-# LANGUAGE QuasiQuotes #-}
 import Text.Hamlet (shamlet)
 import Text.Blaze.Renderer.String(renderHtml)
 import Data.Char (toLower)
