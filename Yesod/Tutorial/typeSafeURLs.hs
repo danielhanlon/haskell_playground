@@ -1,4 +1,4 @@
-{-# LANGUAGE QuasiQuotes,OverloadedString #-}
+{-# LANGUAGE QuasiQuotes,OverloadedStrings #-}
 
 import Text.Hamlet (HtmlUrl, hamlet)
 import Text.Blaze.Renderer.String (renderHtml)
