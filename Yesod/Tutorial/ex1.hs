@@ -1,7 +1,7 @@
 {-# LANGUAGE TypeFamilies, QuasiQuotes, MultiParamTypeClasses,TemplateHaskell, OverloadedStrings #-}
 import Yesod
 
-data HelloWorld = HelloWorld
+data Links = Links
 
 mkYesod "Links" [parseRoutes|
 / HomeR GET
