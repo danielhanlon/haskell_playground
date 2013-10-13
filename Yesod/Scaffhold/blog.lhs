@@ -1,4 +1,4 @@
-> {-# LANGUAGE OverloadedStrings, TypeFamilies, QuasiQuotes,
+    > {-# LANGUAGE OverloadedStrings, TypeFamilies, QuasiQuotes,
     >              TemplateHaskell, GADTs, FlexibleContexts,
     >              MultiParamTypeClasses #-}
 
