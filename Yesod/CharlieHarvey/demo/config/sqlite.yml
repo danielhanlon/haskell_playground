@@ -1,0 +1,20 @@
+Default: &defaults
+  database: demo.sqlite3
+  poolsize: 10
+
+Development:
+  <<: *defaults
+
+Testing:
+  database: demo_test.sqlite3
+  <<: *defaults
+
+Staging:
+  database: demo_staging.sqlite3
+  poolsize: 100
+  <<: *defaults
+
+Production:
+  database: demo_production.sqlite3
+  poolsize: 100
+  <<: *defaults
