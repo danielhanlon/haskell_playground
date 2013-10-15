@@ -1,0 +1,24 @@
+Default: &defaults
+  user: SnippIO
+  password: SnippIO
+  host: localhost
+  database: SnippIO
+  connections: 10
+
+Development:
+  <<: *defaults
+
+Testing:
+  database: SnippIO_test
+  <<: *defaults
+
+Staging:
+  database: SnippIO_staging
+  connections: 100
+  <<: *defaults
+
+Production:
+  database: SnippIO_production
+  connections: 100
+  host: localhost
+  <<: *defaults
