@@ -9,3 +9,4 @@
 /reverse/#String ReverseR GET 
 mirror MirrorR GET POST
 /blog/#ArticleId BlogR GET
+/blog BlogR GET POST
