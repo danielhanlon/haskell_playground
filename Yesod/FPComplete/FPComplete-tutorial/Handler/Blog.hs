@@ -5,6 +5,10 @@ module Handler.Blog ( getBlogR
 where
 
 import Import
+import Data.Monoid
+import Yesod.Form.Nic (YesodNic, nicHtmlField)
+
+instance YesodNic App
 
 getBlogR :: Handler Html
 getBlogR = error "Not yet implemented: getBlogR"
