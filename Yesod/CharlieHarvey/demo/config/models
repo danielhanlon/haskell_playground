@@ -17,7 +17,7 @@ Note
 
 Context
     user Text
-    acceptWarnings Boolean
+    acceptWarnings Bool
 
 Project
     context Context
