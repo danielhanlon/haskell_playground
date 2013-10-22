@@ -1,4 +1,8 @@
-module Handler.Blog where
+module Handler.Blog ( getBlogR
+                    , postBlogR
+                    , getArticleR
+                    )
+where
 
 import Import
 
