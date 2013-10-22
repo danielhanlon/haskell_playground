@@ -1,2 +1,2 @@
 <h1>The text reversed is:
-<p>#{reverse postedText}
+<p>#{reverse theText}
