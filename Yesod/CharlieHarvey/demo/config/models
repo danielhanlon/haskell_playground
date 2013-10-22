@@ -15,7 +15,12 @@ Note
     title Text
     content Text
 
+Context
+    user Text
+    acceptWarnings Boolean
+
 Project
+    context Context
     pi Text
     department Text
 
