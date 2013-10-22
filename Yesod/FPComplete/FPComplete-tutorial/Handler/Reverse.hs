@@ -5,4 +5,5 @@ import Data.List (reverse)
 
 getReverseR :: text -> Handler Html
 getReverseR theText =
-    defaultLayout $ widgetFile "reverse"
+    defaultLayout $ do
+        $(widgetFile "reverse")
