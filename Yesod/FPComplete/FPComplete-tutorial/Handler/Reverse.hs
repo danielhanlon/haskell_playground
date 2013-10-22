@@ -1,8 +1,8 @@
 module Handler.Reverse where
 
 import Import
-import Data.List (reverse)
+import Data.Text (reverse)
 
-getReverseR :: Text -> Handler Html
+getReverseR :: String -> Handler Html
 getReverseR theText =
     defaultLayout $ [whamlet|<h1>The text reversed is:#{reverse theText}|]
