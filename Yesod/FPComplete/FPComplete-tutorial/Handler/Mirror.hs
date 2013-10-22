@@ -4,8 +4,7 @@ import Import
 import qualified Data.Text as T
 
 getMirrorR :: Handler Html
-getMirrorR = defaultLayout $ do
-    $(widgetFile "mirror")
+getMirrorR = defaultLayout $ widgetFile "mirror"
 
 postMirrorR :: Handler Html
 postMirrorR =  do
