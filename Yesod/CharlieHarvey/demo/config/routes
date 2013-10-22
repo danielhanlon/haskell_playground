@@ -7,3 +7,6 @@
 / HomeR GET POST
 /note NotesR GET POST
 /note/#NoteId NoteR GET
+
+/register RegisterR GET POST
+/research-data/#ProjectID ProjectR GET POST
