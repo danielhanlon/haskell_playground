@@ -38,7 +38,3 @@ sampleForm = renderDivs $ (,)
     <$> fileAFormReq "Choose a file"
     <*> areq textField "What's on the file?" Nothing
 
-getEchoR :: String -> Handler RepHtml
-getEchoR theText = do
-    defaultLayout $ do
-        [whamlet|<h1>#{theText}|]
