@@ -23,6 +23,7 @@ library
                      Handler.Echo
                      Handler.Reverse
                      Handler.Mirror
+                     Handler.Blog
 
     if flag(dev) || flag(library-only)
         cpp-options:   -DDEVELOPMENT
