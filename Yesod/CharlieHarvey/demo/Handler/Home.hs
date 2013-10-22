@@ -50,3 +50,11 @@ getNotesR = do
 postNotesR = return ()
 
 getNoteR noteid = return ()
+
+getRegisterR = return ()
+
+postRegisterR = return ()
+
+getProjectR projectID = return ()
+
+postProjectR projectID = return ()
