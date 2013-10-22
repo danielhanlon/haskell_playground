@@ -5,5 +5,4 @@ import Data.List (reverse)
 
 getReverseR :: String -> Handler Html
 getReverseR theText =
-    defaultLayout $ do
-        $(widgetFile "reverse")
+    defaultLayout $ [whamlet|<h1>The text reversed is:#{reverse theText}|]
