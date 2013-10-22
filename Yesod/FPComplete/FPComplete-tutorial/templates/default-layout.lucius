@@ -10,7 +10,7 @@ body {
     margin: 1em auto;
     background: #F2F2F2;
     line-height: 1.5em;
-color: #333; }
+    color: #333; }
 .required { margin: 1em 0; }
 .optional { margin: 1em 0; }
 label { width: 8em; display: inline-block; }
