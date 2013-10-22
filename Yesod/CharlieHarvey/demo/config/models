@@ -23,4 +23,5 @@ Project
     context Context
     pi Text
     department Text
-
+    startDate Date
+    endDate Date
