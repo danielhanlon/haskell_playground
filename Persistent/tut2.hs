@@ -23,7 +23,9 @@ Tutorial
 main = runSqlite ":memory:" $ do
   runMigrationSilent migrateTables
   buildDb
-  dumpTable
+  --dumpTable
+  basic <- selectList [TutorialTitle ==. "Basic Haskell"] []
+  liftIO $ print basic
 
 buildDb = do
   runMigrationSilent migrateTables
