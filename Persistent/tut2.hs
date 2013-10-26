@@ -22,6 +22,7 @@ Tutorial
 
 main = runSqlite ":memory:" $ do
   runMigrationSilent migrateTables
+  insert $ Tutorial "Basic Haskell" "https://fpcomplete.com/school/basic-haskell-l" True
   dumpTable
 
 dumpTable = rawQuery "select * from Tutorial" [] $$ CL.mapM_ (liftIO . print)
