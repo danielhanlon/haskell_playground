@@ -22,7 +22,15 @@ Tutorial
 
 main = runSqlite ":memory:" $ do
   runMigrationSilent migrateTables
-  insert $ Tutorial "Basic Haskell" "https://fpcomplete.com/school/basic-haskell-l" True
+  buildDb
   dumpTable
+
+buildDb = do
+  runMigrationSilent migrateTables
+  insert $ Tutorial "Basic Haskell" "https://fpcomplete.com/school/basic-haskell-1" True
+  insert $ Tutorial "A monad tutorial" "https://fpcomplete.com/user/anne/monads" False
+  insert $ Tutorial "Yesod usage" "https://fpcomplete.com/school/basic-yesod" True
+  insert $ Tutorial "Putting the FUN in functors" "https://fpcomplete.com/user/anne/functors" False
+  insert $ Tutorial "Basic Haskell" "https://fpcomplete/user/anne/basics" False
 
 dumpTable = rawQuery "select * from Tutorial" [] $$ CL.mapM_ (liftIO . print)
