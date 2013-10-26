@@ -23,7 +23,6 @@ Tutorial
 main = runSqlite ":memory:" $ do
   runMigrationSilent migrateTables
   buildDb
-  --dumpTable
   basic <- selectList [TutorialTitle ==. "Basic Haskell"] []
   liftIO $ print basic
 
@@ -35,4 +34,4 @@ buildDb = do
   insert $ Tutorial "Putting the FUN in functors" "https://fpcomplete.com/user/anne/functors" False
   insert $ Tutorial "Basic Haskell" "https://fpcomplete/user/anne/basics" False
 
-dumpTable = rawQuery "select * from Tutorial" [] $$ CL.mapM_ (liftIO . print)
+--dumpTable = rawQuery "select * from Tutorial" [] $$ CL.mapM_ (liftIO . print)
