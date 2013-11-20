@@ -9,3 +9,17 @@ data JValue = JString String
 getString :: JValue -> Maybe String
 getString (JString s) = Just s
 getString _           = Nothing
+
+getDouble (JNumber n) = Just n
+getDouble _           = Nothing
+
+getBool (JBool b)     = Just b
+getBool _             = Nothing
+
+getObject (JObject o) = Just o
+getObject _           = Nothing
+
+getArray (JArray a)   = Just a
+getArray _            = Nothing
+
+isNull v              = v == JNull
