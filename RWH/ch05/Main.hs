@@ -1,4 +1,4 @@
-module main () where
+module Main () where
 
 import JSON
 
