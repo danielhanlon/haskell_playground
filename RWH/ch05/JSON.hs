@@ -1,3 +1,13 @@
+module JSON ( JValue(..)
+            , getString
+            , getInt
+            , getDouble
+            , getBool
+            , getObject
+            , getArray
+            , isNull
+            ) where
+
 data JValue = JString String
             | JNumber Double
             | JBool Bool
@@ -9,6 +19,9 @@ data JValue = JString String
 getString :: JValue -> Maybe String
 getString (JString s) = Just s
 getString _           = Nothing
+
+getInt (JNumber n)    = Just (truncate n)
+getInt _              = Nothing
 
 getDouble (JNumber n) = Just n
 getDouble _           = Nothing
