@@ -1,3 +1,4 @@
+module main () where
 
 import JSON
 
