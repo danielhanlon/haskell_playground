@@ -1,7 +1,7 @@
 {-# LANGUAGE LambdaCase #-}
 import System.IO
 import System.Directory(getTemporaryDirectory, removeFile)
-import Control.Exception(finally,catch)
+import Control.Exception(finally,catchJust)
 
 main :: IO ()
 main = withTempFile "mytemp.txt" myAction
@@ -33,7 +33,6 @@ myAction tempname temph =
 withTempFile :: String -> (FilePath -> Handle -> IO a) -> IO a
 withTempFile pattern func =
   do
-    catchJust (\e -> if isDoesNotExistErrorType (ioeGetErrorType e) then Just () else Nothing)
     tempdir <- catchJust (\case UnsupportedOperation -> Just ()
                                 _ -> Nothing)
                          (getTemporaryDirectory) (\_ -> return ".")
