@@ -29,6 +29,7 @@ myAction tempname temph =
     putStrLn $ "Which could be expressed as this Haskell literal:"
     print c
 
+withTempFile :: String -> (FilePath -> Handle -> IO a) -> IO a
 withTempFile pattern func =
   do
     tempdir <- catch (getTemporaryDirectory) (\_ -> return ".")
