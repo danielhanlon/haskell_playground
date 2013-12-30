@@ -35,7 +35,8 @@ withTempFile pattern func =
   do
     catchJust (\e -> if isDoesNotExistErrorType (ioeGetErrorType e) then Just () else Nothing)
     tempdir <- catchJust (\case UnsupportedOperation -> Just ()
-                          _ -> Nothing) (getTemporaryDirectory) (\_ -> return ".")
+                                _ -> Nothing)
+                         (getTemporaryDirectory) (\_ -> return ".")
     (tempfile, temph) <- openTempFile tempdir pattern
     finally (func tempfile temph)
             (do hClose temph
