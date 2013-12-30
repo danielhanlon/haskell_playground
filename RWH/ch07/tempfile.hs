@@ -2,6 +2,7 @@
 import System.IO
 import System.Directory(getTemporaryDirectory, removeFile)
 import Control.Exception(finally,catchJust)
+import GHC.IO.Exception(UnsupportedOperation)
 
 main :: IO ()
 main = withTempFile "mytemp.txt" myAction
