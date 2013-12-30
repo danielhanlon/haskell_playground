@@ -1,7 +1,6 @@
 import System.IO
 import System.Directory(getTemporaryDirectory, removeFile)
-import System.IO.Error(catch)
-import Control.Exception(finally)
+import Control.Exception(finall,catch)
 
 main :: IO ()
 main = withTempFile "mytemp.txt" myAction
